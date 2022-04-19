@@ -2,7 +2,7 @@ FROM golang:1.17
 
 COPY ./oracle-sdk /tmp/oracle-sdk
 
-RUN apt-get update && apt-get install -y unzip && \
+RUN apt-get update && apt-get install -y unzip libaio-dev && \
 unzip /tmp/oracle-sdk/instantclient-basic-linux.x64-12.2.0.1.0.zip -d /usr/local/ && \
 unzip /tmp/oracle-sdk/instantclient-sdk-linux.x64-12.2.0.1.0.zip -d /usr/local/ && \
 unzip /tmp/oracle-sdk/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip -d /usr/local/ && \
