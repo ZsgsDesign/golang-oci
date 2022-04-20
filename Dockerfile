@@ -15,3 +15,8 @@ ln -s /usr/lib/libnsl.so.2 /usr/lib/libnsl.so.1 && \
 ln -s /lib/libc.so.6 /usr/lib/libresolv.so.2 && \
 ln -s /lib64/ld-linux-x86-64.so.2 /usr/lib/ld-linux-x86-64.so.2 && \
 rm -rf /tmp/oracle-sdk
+
+COPY oci8.pc /usr/lib/pkgconfig/oci8.pc
+
+ENV LD_LIBRARY_PATH=/usr/local/instantclient/
+ENV PKG_CONFIG_PATH=/usr/lib/pkgconfig/
